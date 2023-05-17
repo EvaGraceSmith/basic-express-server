@@ -5,6 +5,7 @@ const cors = require('cors');
 const logger = require('./middleware/logger.js');
 const validator = require('./middleware/validator.js');
 const notFound = require('./error-handlers/404.js');
+const error500 = require('./error-handlers/500.js');
 
 const app = express();
 
@@ -45,11 +46,14 @@ app.get('/success', (req, res, next) => {
 });
 
 app.get('/bad', (req, res, next) => {
-  next('you messsed up');
+  next('Oops! We have an error!');
 },
 );
 
 app.use('*', notFound);
+//error first callback
+app.use(error500);
+
 
 const start = (port) => app.listen(port, () => console.log(`server up on port ${port}`));
 
