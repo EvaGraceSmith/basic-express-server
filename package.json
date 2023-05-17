@@ -1,0 +1,30 @@
+{
+  "name": "basic-express-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest --verbose --coverage",
+    "test-watch": "jest --watchAll --verbose --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EvaGraceSmith/basic-express-server.git"
+  },
+  "keywords": [],
+  "author": "Eva Grace Smith",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EvaGraceSmith/basic-express-server/issues"
+  },
+  "homepage": "https://github.com/EvaGraceSmith/basic-express-server#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jest": "^29.5.0",
+    "node-yaml": "^4.0.1",
+    "supertest": "^6.3.3"
+  }
+}
