@@ -4,10 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "start": "node index.js",
+    "test": "jest --verbose --coverage",
+    "test-watch": "jest --watchAll --verbose --coverage"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EvaGraceSmith/basic-express-server.git"
+  },
+  "keywords": [],
   "author": "Eva Grace Smith",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EvaGraceSmith/basic-express-server/issues"
+  },
+  "homepage": "https://github.com/EvaGraceSmith/basic-express-server#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
