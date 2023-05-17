@@ -31,5 +31,10 @@ describe('Server', () => {
     const response = await mockRequest.get('/notfound');
     expect(response.status).toBe(404);
   }   );
+//TDD goal: write a test that proves that the /person route works with a name query string parameter
+test('handles person route', async () => {
+    const response = await mockRequest.get('/person?name=John');
+    expect(response.status).toBe(200);
+    expect(response.body.name).toEqual('John');
 
 });

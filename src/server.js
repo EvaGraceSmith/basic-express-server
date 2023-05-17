@@ -3,6 +3,7 @@
 const express = require('express');
 const cors = require('cors');
 const logger = require('./middleware/logger.js');
+const validator = require('./middleware/validator.js');
 
 const app = express();
 
@@ -17,7 +18,7 @@ app.get('/', (req, res, next    ) => {
 });
 
 //query string
-app.get('/person', (req, res, next) => {
+app.get('/person', validator,(req, res, next) => {
   let name = req.query.name;
   if (!name) {
     res.status(500).send('Name parameter is missing');
