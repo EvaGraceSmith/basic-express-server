@@ -4,6 +4,7 @@ const express = require('express');
 const cors = require('cors');
 const logger = require('./middleware/logger.js');
 const validator = require('./middleware/validator.js');
+const notFound = require('./error-handlers/404.js');
 
 const app = express();
 
@@ -48,10 +49,7 @@ app.get('/bad', (req, res, next) => {
 },
 );
 
-app.use('*', (req, res, next) => {
-  res.status(404).send('not found');
-},
-);
+app.use('*', notFound);
 
 const start = (port) => app.listen(port, () => console.log(`server up on port ${port}`));
 

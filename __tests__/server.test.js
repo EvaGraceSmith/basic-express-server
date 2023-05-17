@@ -1,3 +1,4 @@
+//integration test
 'use strict';
 
 const { app } = require('../src/server');
