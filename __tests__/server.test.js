@@ -38,6 +38,13 @@ test('handles not found', async () => {
   const response = await mockRequest.get('/notfound');
   expect(response.status).toBe(404);
 }   );
+
+//TDD goal: write a test that returns a 404 on a bad method
+test('handles bad method', async () => {
+  const response = await mockRequest.post('/person');
+  expect(response.status).toBe(404);
+}   );
+
 //TDD goal: write a test that proves that the /person route works with a name query string parameter
 test('handles person route', async () => {
   const response = await mockRequest.get('/person?name=John');
