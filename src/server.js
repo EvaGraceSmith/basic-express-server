@@ -22,13 +22,8 @@ app.get('/', (req, res, next    ) => {
 //query string
 app.get('/person', validator,(req, res, next) => {
   let name = req.query.name;
-  if (!name) {
-    res.status(500).send('Name parameter is missing');
-  }
-  else {
-    res.status(200).json({name});
-    console.log('req.query', req.query.name);
-  }
+  res.status(200).json({name});
+  console.log('req.query', req.query.name);
 },
 );
 
@@ -51,8 +46,11 @@ app.get('/bad', (req, res, next) => {
 );
 
 app.use('*', notFound);
+
 //error first callback
 app.use(error500);
+
+
 
 
 const start = (port) => app.listen(port, () => console.log(`server up on port ${port}`));
